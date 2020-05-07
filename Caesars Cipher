@@ -1,0 +1,45 @@
+function rot13(str) {
+
+ let array = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V",
+ "W","X","Y","Z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"]
+
+  let arrayStr = str.split("");
+  let space = [];
+
+  function checkSpace(arrayStr) {
+    for(let i=0; i<arrayStr.length; i++) {
+      if(arrayStr[i] === " ") {
+        space.push(i)
+      }
+    }
+   return space;
+  }
+checkSpace(arrayStr);
+  
+
+  let newArray = [];
+  for(let i=0; i<arrayStr.length; i++) {
+    let indx = array.indexOf(arrayStr[i]);
+    newArray.push(array[indx + 13])
+    
+  }
+
+
+ 
+
+ for(let i=0; i<space.length; i++) {
+ 
+  newArray.splice(space[i],1, " ") 
+ }
+ 
+ newString = newArray.join("");
+ 
+ return newString;
+
+
+  
+ 
+}
+
+rot13("SERR PBQR PNZC");
+
