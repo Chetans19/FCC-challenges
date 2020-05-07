@@ -1,0 +1,30 @@
+function rot13(str) {
+
+ let alphabets = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V",
+ "W","X","Y","Z","A","B","C","D","E","F","G","H","I","J","K","L","M"]
+
+ let arrayStr = str.split("");
+ finalArray = [];
+
+
+  for(let i=0; i<arrayStr.length; i++) {
+    if(alphabets.indexOf(arrayStr[i]) === -1) {
+        finalArray.push(arrayStr[i])
+    } else {
+      for(j=0; j<alphabets.length; j++) {
+        if(arrayStr[i]===alphabets[j]) {
+          finalArray.push(alphabets[j+13])
+        }
+      }
+    }
+  }
+
+
+let finalAns = finalArray.join("");
+
+
+  return finalAns;
+}
+
+rot13("SERR YBIR?");
+
