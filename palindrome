@@ -1,0 +1,23 @@
+function palindrome(str) {
+
+  let string = /\w/ig;
+  let strToReverse = str.match(string);
+
+  let originalArr = str.match(string);
+
+  let reversedStr = strToReverse.reverse().join("").toLowerCase().replace(/\_/,"");
+  console.log(reversedStr)
+  let originalStr = originalArr.join("").toLowerCase().replace(/\_/,"");
+  console.log(originalStr)
+
+  if(originalStr === reversedStr) {
+      return true;
+  } else {
+      return false;
+  }
+
+}
+
+
+
+palindrome("almostomla");
