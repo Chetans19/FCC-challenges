@@ -1,0 +1,32 @@
+function fearNotLetter(str) {
+
+  let alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
+  "t","u","v","x","y","z"]
+  let strArray = str.split("");
+
+  let startElement = strArray[0]
+
+  let endElement = strArray[strArray.length -1];
+
+  let startIndex = alphabets.indexOf(startElement);
+  let endIndex = alphabets.indexOf(endElement)
+
+ 
+ let newArr = [];
+ for(let i=startIndex; i<=endIndex; i++) {
+     newArr.push(alphabets[i]);
+ }
+ 
+
+ for(let i=0; i<newArr.length; i++) {
+     if(strArray.indexOf(newArr[i])===-1) {
+         return newArr[i];
+     } 
+     
+ }
+
+
+  
+}
+
+fearNotLetter("abcdefghjklmno");
